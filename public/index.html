@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GVS Computer Center</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Header Image -->
+<img src="dp.jpg" class="header-img">
+
+<!-- Navbar -->
+<div class="navbar">
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('admission')">Admission</button>
+    <button onclick="showPage('login')">Login</button>
+    <button onclick="showPage('result')">Result</button>
+</div>
+
+<!-- Home -->
+<div id="home" class="page">
+    <h1>GVS COMPUTER CENTER</h1>
+</div>
+
+<!-- Admission Form -->
+<div id="admission" class="page">
+    <h2>Admission Form</h2>
+    <form id="admissionForm">
+        <input type="text" placeholder="Student Name" name="name" required>
+        <input type="text" placeholder="Roll Number" name="roll" required>
+        <input type="text" placeholder="Father Name" name="father">
+        <input type="text" placeholder="Mother Name" name="mother">
+        <input type="text" placeholder="Mobile" name="mobile">
+        <input type="email" placeholder="Email" name="email">
+        <input type="date" name="dob">
+        <input type="text" placeholder="Address" name="address">
+        <input type="date" name="admissionDate">
+        <input type="text" placeholder="Aadhar" name="aadhar">
+
+        <select name="course">
+            <option>CCC</option>
+            <option>DCA</option>
+            <option>ADCA</option>
+            <option>PGDCA</option>
+            <option>BCC</option>
+            <option>DTP</option>
+            <option>DADTP</option>
+            <option>BCAD</option>
+            <option>ADFD</option>
+            <option>CCA</option>
+            <option>ADIT</option>
+            <option>Tally GST</option>
+            <option>Other</option>
+        </select>
+
+        <input type="file" name="photo">
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<!-- Login -->
+<div id="login" class="page">
+    <h2>Student Login</h2>
+    <input type="text" id="loginRoll" placeholder="Roll Number">
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPass" placeholder="Password">
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- Result -->
+<div id="result" class="page">
+    <h2>Check Result</h2>
+    <input type="text" id="resRoll" placeholder="Roll Number">
+    <input type="email" id="resEmail" placeholder="Email">
+    <input type="password" id="resPass" placeholder="Password">
+    <button onclick="getResult()">Show Result</button>
+
+    <div id="resultBox"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
