@@ -2,13 +2,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
+// IMPORTANT (Render के लिए)
+const PORT = process.env.PORT || 3000;
+
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
+// Temporary database
 let students = [];
 let results = [];
 
-// Admission Form
+// Admission
 app.post("/admission", (req, res) => {
   students.push(req.body);
   res.json({ message: "Admission Successful" });
@@ -26,7 +30,7 @@ app.post("/login", (req, res) => {
   }
 });
 
-// Add Result (manual)
+// Demo result (default)
 results.push({ name: "Anmol", marks: 450 });
 
 // Get Result
@@ -40,7 +44,7 @@ app.get("/result/:name", (req, res) => {
   }
 });
 
-// ✅ FIXED PORT (IMPORTANT)
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => console.log("Server running on port " + PORT));
+// Server start (FIXED)
+app.listen(PORT, () => {
+  console.log("Server running on port " + PORT);
+});
